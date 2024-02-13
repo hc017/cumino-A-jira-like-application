@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './LoginSignup.css'; // Import the CSS file
+import googleLogo from './Google__G__logo.svg.png'
 
 export const LoginSignup = () => {
   const [action, setAction] = useState("Login");
+
   return (
     <div id="loginSignupContainer" className="outcont">
       <div className='box'>
@@ -47,6 +49,16 @@ export const LoginSignup = () => {
             >
               Login
             </div>
+          </div>
+
+          {/* Space for Google Sign-In button logo */}
+
+          <div className="google-signin-logo-container">
+            <button className="google-signin-logo-container">
+              <a href="#google-signin" className="google-signin-button">
+                <img src={googleLogo} className="google-logo" />
+              </a>
+            </button>
           </div>
         </div>
       </div>

@@ -107,6 +107,16 @@
     gap: 30px;
     margin: 60px auto;
   }
+  .google-signin-logo-container {
+    margin-top: 20px; /* Adjust margin-top as needed */
+    text-align: center; /* Center the content horizontally */
+  }
+  
+  .google-logo {
+    width: 60px;
+    height: auto;
+  }
+  
 
   
   
