@@ -1,10 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-import { LoginSignup } from './Components/LoginSignup_page/LoginSignup';
-
+import Navbar from './Components/Navbar/Navbar';
+import Home from './Pages/Home/Home';
+import {
+  BrowserRouter as Router,
+} from "react-router-dom";
 function App() {
   return (
-    <LoginSignup />
+    <Router>
+      <Navbar />
+      <Home />
+    </Router>
   );
 }
 
