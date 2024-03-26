@@ -10,6 +10,11 @@ const Secondsection = () => {
             {" "}
             Stop Drowning in <br /> Tasks <br /> Get Shiz Done
           </p>
+          <p id="SS_subtext" className="SS_text">
+            {" "}
+            The project management app built for Gen Z <br /> Stay on top of your game, without the stress.
+          </p>
+
         </div>
         <div className="SS_right_component">
           <div className="SS_R_videobg">

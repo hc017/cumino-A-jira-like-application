@@ -3,6 +3,7 @@ import "./Home.css";
 import { GoArrowUpRight } from "react-icons/go";
 import Secondsection from "./SecondSection/Secondsection";
 import ThirdSection from "./ThirdSection/ThirdSection";
+import Staytuned from "../../Components/StayTuned/Staytuned";
 
 function Home() {
   const [featuredData, setFeaturedData] = useState(null);
@@ -32,6 +33,7 @@ function Home() {
         </div>
         <Secondsection/>
         <ThirdSection />
+        <Staytuned/>
       </div>
     </>
   );
