@@ -1,12 +1,105 @@
 .TH_Component {
     width: 100%;
-    height: 80vh;
-    background-color: black;
+    height: 65vh;
+
   }
   .TH_innerComponent {
     width: 85%;
     height: 100%;
-    display: flex;
     margin-left: 7%;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5%;
+
+  }
+  .TH_upper{
+    width: 100%;
+    height: 30%;
+    padding-top: 1%;
+
+  }
+  .TH_title{
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Poppins;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #083789;
+
+  }
+  .TH_lower{
+    width: 100%;
+    height: 70%;
+
+
+  }
+  .TH_lower_steps{
+    width: 90%;
+    height: 95%;
+    padding-left: 5%;
+    display: flex;
+  }
+  .TH_steps_box{
+    width: 20%;
+    height: 80%;
+    margin-top: 4.5%;
+    margin-left: 1%;
+  
+
+  }
+  .TH_box_circle{
+    width: 30%;
+    height: 20%;
+    margin-left: 32%;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    display: inline-flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-decoration: none; /* Remove default link underline */
+    justify-content: center;
+    border-radius: 100%;
+    color: white;
+    border: solid 1px #97b1df;
+    background-color: #614f6e;
+  }
+  .TH_box_headline{
+    width: 85%;
+    height: 1.5rem;
+    margin-left: 7%;
+    margin-top: 10%;
+    font-family: Poppins;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+  }
+  .TH_box_subheadline{
+    width: 85%;
+    height: 100%;
+    margin-left: 7%;
+    margin-top: 10%;
+    font-family: Poppins;
+    font-size: 1.3rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+
   }
