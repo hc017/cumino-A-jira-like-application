@@ -1,29 +1,85 @@
 .hero {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(45deg, #243B55 0%, #141E30 100%);
-  }
-  
-  .hero h1 {
-    font-size: 48px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-weight: 800;
-    padding-bottom: 10px;
-    background: #fff;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .hero h3 {
-    background: #222;
-    padding: 1rem 2rem;
-    border-radius: 6px;
-    font-size: 15px;
-    font-style: italic;
-    letter-spacing: 2px;
-    color: #fff;
-  }
+  width: 100%;
+  height: 300vh;
+  background: linear-gradient(45deg, #243b55 0%, #141e30 100%);
+}
+.h_Section{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.herotitle{
+  font-size: 4.5rem;
+  color: #fff;
+  text-align: center;
+  font-family: fantas;
+  padding: 1rem 2rem;
+  letter-spacing: 2px;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  transition:
+  width 2s,
+  height 2s,
+  background-color 2s,
+  rotate 2s;
+}
+.herosubtitle{
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  font-family: fantas;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: c;
+  text-align: center;
+  animation: move 16s infinite;
+}
+.herobtn{
+  align-items: center;
+  margin: 2.75rem;
+  display: inline-flex;
+}
+.btnbox{
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.btnname{
+  color:#ffffff;
+  padding: 0.8rem 1.6rem;
+  font-family: fantas;
+  font-weight: 80;
+  font-size: 1.5rem;
+}
+.btn {
+  border: 2px solid black;
+  display: inline-block;
+  background-color: transparent;
+  color: black;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 20px;
+  font-family: fantas;
+  cursor: pointer;
+}
+.info {
+  border-color: #2196F3;
+  display: inline-block;
+  font-size: 1.15rem;
+  color: rgba(161, 110, 255,80%)
+}
+.btn:hover{
+  background-color: #222222;
+  color: #ffffff;
+}
+
