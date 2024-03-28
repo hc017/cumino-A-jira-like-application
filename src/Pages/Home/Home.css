@@ -16,15 +16,23 @@
   color: #000000;
   text-align: center;
   font-family: fantas;
-  padding: 1rem 2rem;
   letter-spacing: 2px;
   border-radius: 6px;
-  margin-bottom: 0.5rem;
   transition:
   width 2s,
   height 2s,
   background-color 2s,
   rotate 2s;
+}
+.Hbar{
+  width: 100%;
+  height: 10rem;
+  background-color: #8e8b7f;
+}
+.h_section_titles{
+  width: 85%;
+  height: 60%;
+  margin-top: 10%;
 }
 .herosubtitle{
   font-size: 1.5rem;
@@ -33,14 +41,18 @@
   font-family: fantas;
   letter-spacing: 1px;
   display: flex;
+  margin-left: 28%;
+  margin-top: 3%;
   flex-direction: c;
   text-align: center;
   animation: move 16s infinite;
 }
 .herobtn{
   align-items: center;
-  margin: 2.75rem;
+  margin-left: 36%;
+  margin-top: 4%;
   display: inline-flex;
+
 }
 .btnbox{
   align-items: center;
