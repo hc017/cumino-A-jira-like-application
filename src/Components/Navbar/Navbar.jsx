@@ -1,17 +1,48 @@
 import React, { useState } from "react";
-import "./Navbar.css";
-import { MenuItems } from "./MenuItems";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { BiUserCircle } from "react-icons/bi";
-import Nlogo from "./Cumin_logo.png"
+import Nlogo from "./Cumin_logo.png";
+import "./Navbar.css";
+
+const MenuItems = [
+  {
+    title: "Home",
+    url: "/",
+    cName: "nav-links",
+    icon: "fas fa-house-user",
+  },
+  {
+    title: "About",
+    url: "#",
+    cName: "nav-links",
+    icon: "fas fa-circle-info",
+  },
+  {
+    title: "Service",
+    url: "#",
+    cName: "nav-links",
+    icon: "fas fa-briefcase",
+  },
+  {
+    title: "Contact",
+    url: "#",
+    cName: "nav-links",
+    icon: "fas fa-address-book",
+  },
+  {
+    title: "Sign Up",
+    url: "#",
+    cName: "nav-links-mobile",
+  },
+];
 
 function Navbar() {
-  const [clicked, setClicked] = useState(false); // Initialize state using useState
-  const navigate = useNavigate();
+  const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
-    setClicked(clicked); // Update state using setClicked
+    setClicked(!clicked);
   };
+
   const CurrentUser = {
     result: {
       email: "hc@mail.com",
@@ -23,8 +54,9 @@ function Navbar() {
     <nav className="NavbarItems">
       <h1 className="navbar-logo">
         <img className="Nlgo" src={Nlogo} alt="" />
-        <p className="Ntitle">Cumin</p>
-        
+        <Link to="/" className="Ntitle">
+          Cumin
+        </Link>
       </h1>
       <div className="menu-icons" onClick={handleClick}>
         <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
@@ -34,19 +66,17 @@ function Navbar() {
         {MenuItems.map((item, index) => {
           return (
             <li key={index}>
-              <a className={item.cName} href={item.url}>
+              <Link to={item.url} className={item.cName}>
                 <i className={item.icon}></i>
                 {item.title}
-              </a>
+              </Link>
             </li>
           );
         })}
-        {CurrentUser ? ( // If there is a CurrentUser
+        {CurrentUser ? (
           <>
-            {/* Channel logo */}
             <div className="chanel_logo_app">
               <p className="fsChar_logo_app">
-                {/* Displaying user's initial */}
                 {CurrentUser?.result.name ? (
                   <>{CurrentUser?.result.name.charAt(0).toUpperCase()}</>
                 ) : (
@@ -56,12 +86,10 @@ function Navbar() {
             </div>
           </>
         ) : (
-          // If there is no CurrentUser
           <>
-            {/* Sign In button */}
             <p className="auth_btn">
-              <BiUserCircle size={22} /> {/* User Circle icon */}
-              <b>Sign In</b> {/* Sign In text */}
+              <BiUserCircle size={22} />
+              <b>Sign In</b>
             </p>
           </>
         )}

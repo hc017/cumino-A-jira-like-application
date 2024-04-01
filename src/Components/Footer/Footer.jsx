@@ -1,6 +1,13 @@
 import React from "react";
 import "./Footer.css";
 import flogo from './Cumin_logo.png';
+import { FaTwitter } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+
+
+
 
 const Footer = () => {
   return (
@@ -20,10 +27,22 @@ const Footer = () => {
             </p>
           </div>
           <div className="F_socialmedia">
-            <div className="F_slogo"></div>
-            <div className="F_slogo"></div>
-            <div className="F_slogo"></div>
-            <div className="F_slogo"></div>
+            <div className="F_slogo">
+            <FaTwitter className="logoF" />
+
+            </div>
+            <div className="F_slogo">
+            <FaInstagram className="logoF" />
+
+            </div>
+            <div className="F_slogo">
+            <FaLinkedin className="logoF" />
+
+            </div>
+            <div className="F_slogo">
+            <FaFacebook className="logoF" />
+
+            </div>
           </div>
           <div className="f_tags">
             <p className="f_tag_text">Legal Information</p>

@@ -6,6 +6,7 @@ import ThirdSection from "./ThirdSection/ThirdSection";
 import Staytuned from "../../Components/StayTuned/Staytuned";
 import SignIn from "../SignIn/SignIn";
 import { Link } from "react-router-dom";
+import girl from "./h_girl.png"
 
 function Home() {
   const [featuredData, setFeaturedData] = useState(null);
@@ -25,6 +26,7 @@ function Home() {
           <p className="greetings de">"From Chaos to Clarity: Master Team Management Simplified"</p>
           <p className="greetings it">"One Platform, Infinite Possibilities: Lead Your Team to Excellence"</p> */}
           </div>
+          
           <div className="herobtn">
             <div className="btnbox">
               <Link to="/signin" className="btnname">
@@ -36,6 +38,7 @@ function Home() {
             </div>
           </div>
           </div>
+          {/* <img className="hgirl" src={girl} alt="" /> */}
           <div className="Hbar">
 
           </div>

@@ -25,12 +25,17 @@
     margin-top: 4%;
     display: flex;
 }
-.F_logo{
+.F_slogo{
     width: 20%;
     height: 4.5rem;
     margin-left: 10%;
     margin-top: 1%;
 
+}
+.logoF{
+    width: 100%;
+    margin-top: 18%;
+    height: 60%;
 }
 .F_title{
     width: 25%;

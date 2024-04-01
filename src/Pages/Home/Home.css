@@ -11,6 +11,11 @@
   justify-content: center;
   align-items: center;
 }
+.hgirl{
+  position: relative;
+  bottom: 0%;
+  left: 0%;
+}
 .herotitle{
   font-size: 4.5rem;
   color: #000000;
