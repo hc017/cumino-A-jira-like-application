@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { MenuItems } from "./MenuItems";
 import { useNavigate } from "react-router-dom";
 import { BiUserCircle } from "react-icons/bi";
+import Nlogo from "./Cumin_logo.png"
 
 function Navbar() {
   const [clicked, setClicked] = useState(false); // Initialize state using useState
@@ -21,7 +22,9 @@ function Navbar() {
   return (
     <nav className="NavbarItems">
       <h1 className="navbar-logo">
-        Cumin <i className="fab fa-react"></i>
+        <img className="Nlgo" src={Nlogo} alt="" />
+        <p className="Ntitle">Cumin</p>
+        
       </h1>
       <div className="menu-icons" onClick={handleClick}>
         <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>

@@ -4,6 +4,8 @@ import { GoArrowUpRight } from "react-icons/go";
 import Secondsection from "./SecondSection/Secondsection";
 import ThirdSection from "./ThirdSection/ThirdSection";
 import Staytuned from "../../Components/StayTuned/Staytuned";
+import SignIn from "../SignIn/SignIn";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [featuredData, setFeaturedData] = useState(null);
@@ -25,9 +27,9 @@ function Home() {
           </div>
           <div className="herobtn">
             <div className="btnbox">
-              <p className="btnname">
+              <Link to="/signin" className="btnname">
                 Get Started <GoArrowUpRight className="btnicon" />{" "}
-              </p>
+              </Link>
             </div>
             <div className="btnbox2">
               <button class="btn info">Learn More</button>

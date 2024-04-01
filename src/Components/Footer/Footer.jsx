@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import flogo from './Cumin_logo.png';
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
       <div className="Footer_inner_component">
         <div className="Footer_left">
           <div className="F_title_component">
-            <img className="F_logo" src="" alt="" />
+            <img className="F_logo" src={flogo} alt="" />
             <h1 className="F_title">Cumin</h1>
           </div>
           <div className="F_subtitle_component">
