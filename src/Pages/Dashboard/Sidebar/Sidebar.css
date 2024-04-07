@@ -1,0 +1,264 @@
+.Sidebar_component {
+  width: 15%;
+  color: #fff;
+  padding-left: 20px;
+  height: auto;
+  background-image: linear-gradient(30deg, #222222, #222222);
+  border-top-right-radius: 80px;
+}
+.S_search {
+  width: 80%;
+  height: 2rem;
+  margin-top: 10%;
+  margin-left: 9%;
+}
+.search_box {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+.SB_icons{
+  width: 12%;
+  margin-right: 7%;
+  height: 15%;
+}
+.input_search {
+  height: 2rem;
+  width: 100%;
+  border-style: none;
+  padding: 10px;
+  font-size: 1rem;
+
+  outline: none;
+  border-radius: 25px;
+  transition: all 0.5s ease-in-out;
+  background-color: #b7b3a4;
+  padding-right: 40px;
+  color: #efefef;
+}
+.input_search::placeholder {
+  color: rgba(118, 99, 99, 0.699);
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.btn_search {
+  width: 10%;
+  height: 2rem;
+  border-style: none;
+  font-size: 1rem;
+  font-weight: bolder;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  background-color: transparent;
+  pointer-events: painted;
+}
+.btn_search:focus ~ .input_search {
+  width: 100%;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+.input_search:focus {
+  width: 100%;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+@keyframes youtubeAnim {
+  0%,
+  100% {
+    color: #c9110f;
+  }
+  50% {
+    color: #ff0000;
+  }
+}
+
+.S_list {
+  margin-top: 10%;
+}
+
+.a {
+  font-size: 0.7rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #fff;
+  display: block;
+  padding: 12px;
+  display: flex;
+  font-style: oblique;
+  padding-left: 30px;
+  text-align: center;
+  text-decoration: none;
+
+  -webkit-tap-highlight-color: transparent;
+}
+#aset{
+  margin-top: 20%;
+}
+#atitle{
+  font-size: 1rem;
+  font-style: italic;
+}
+.a:hover {
+  color: #000000;
+  background: #cecab9;
+  outline: none;
+  position: relative;
+  background-color: #cecab9;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.a:hover::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  bottom: 100%;
+  right: 0;
+  height: 35px;
+  width: 35px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 0 20px 0 0 #cecab9;
+}
+.a:hover::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: 38px;
+  right: 0;
+  height: 35px;
+  width: 35px;
+  border-top-right-radius: 18px;
+  box-shadow: 0 -20px 0 0 #cecab9;
+}
+
+/*TODO: clean it all up, finish flex, add aesthetics, icons, redefine to be relative to vh-vw, maybe rework v2 variant using scss and frames and real transitions? */
+.Sidebar_profile_section {
+  width: 100%;
+  height: 25%;
+  padding-top: 2%;
+}
+.infocardContainer {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 300;
+}
+.SC_h2 {
+  font-weight: 600;
+  font-style: italic;
+  font-family: "Fira Sans Condensed", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.Sbar_line{
+  width: 85%;
+  margin-left: 7%;
+  border-bottom: 1px solid coral;
+}
+.SB_team{
+  width: 100%;
+  height: auto;
+  padding-top: 5%;
+}
+.SB_subtitle{
+  font-size: small;
+  font-family:"Fira Sans Condensed", sans-serif;
+}
+
+
+
+
+
+.infocardContainer {
+  display: flex;
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  background: rgb(0, 159, 255);
+  background: linear-gradient(121deg, #12203d 13%, #fbc03e 100%);
+  transition: all 500ms ease-in;
+  transition-delay: 1s;
+  margin: auto;
+}
+.infocardContainer:hover {
+  width: 250px;
+  border-radius: 100px 100px 10px 100px;
+  transition: all 1s ease-out;
+}
+
+.infocardContainer .divi {
+  color: white;
+  flex-shrink: 1;
+  width: 100%;
+  --background-color: green;
+}
+.infocardContainer div * {
+  display: flex;
+  --flex: inherit;
+  overflow: hidden;
+  text-overflow: hidden;
+  --background-color: yellow;
+  color: white;
+  white-space: nowrap;
+  width: 0;
+  height: auto;
+  transition: all 450ms ease-in;
+  transition-delay: 1s;
+}
+.infocardContainer:hover div * {
+  --background-color: purple;
+  display: flex;
+  visibility: visible;
+  transition: all 1s ease-out;
+  transition-delay: 500ms;
+  width: 100%;
+  height: auto;
+}
+
+.infocardContainer #main,
+.infocardContainer #main img {
+  --background-color: red;
+  height: 100px;
+  width: 100px;
+  padding-right: 10px;
+  border-radius: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.infocardContainer #main img {
+  height: 90px;
+  width: 90px;
+  transition: none;
+  display: float;
+  position: relative;
+  border: 10px solid white;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+.infocardContainer #textbois {
+  position: relative;
+}
+.infocardContainer #textbois {
+  max-width: 60%;
+  max-height: 30px;
+  --background-color: white;
+  position: absolute;
+  bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 13px;
+}
+.infocardContainer #textbois {
+  background-color: white;
+  max-width: 30px;
+  --margin: 0 1px 0 1px;
+  border-radius: 25px;
+}
+.S_search {
+
+}

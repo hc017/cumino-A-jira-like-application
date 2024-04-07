@@ -6,6 +6,9 @@ import {
   } from "react-router-dom"
 import Home from '../Pages/Home/Home'
 import SignIn from '../Pages/SignIn/SignIn'
+import DashboardMain from '../Pages/Dashboard/DashboardMain'
+
+
 
 
 function AllRoutes() {
@@ -13,6 +16,7 @@ function AllRoutes() {
     <Routes>
     <Route path='/' element={<Home/>}></Route> 
     <Route path='/signin' element={<SignIn/>}></Route> 
+    <Route path='/dashboard' element={<DashboardMain/>}></Route> 
     </Routes>
   )
 }
