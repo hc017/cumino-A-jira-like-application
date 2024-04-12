@@ -41,8 +41,9 @@ const SignIn = () => {
         },
         body: JSON.stringify({ username, email, password }),
       });
+      console.log("Signup success");
       if (!response.ok) {
-        throw new Error("Signup failed");
+        console.log("Signup failed");
       }
       // Redirect or perform other actions upon successful signup
     } catch (error) {

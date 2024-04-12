@@ -2,10 +2,47 @@
   width: 15%;
   color: #fff;
   padding-left: 20px;
-  height: auto;
+  height: 100vh;
   background-image: linear-gradient(30deg, #222222, #222222);
   border-top-right-radius: 80px;
+  transition: width 0.5s ease-in-out; /* Add transition for width */
 }
+
+/* Define the collapsed state for the sidebar */
+.Sidebar_component.collapsed {
+  width: 5%; /* Adjust as needed */
+}
+
+
+
+/* Add animations */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Apply animations to the sidebar */
+.Sidebar_component {
+  animation: slideIn 0.5s forwards; /* Slide in animation */
+}
+
+.Sidebar_component.collapsed {
+  animation: slideOut 0.5s forwards; /* Slide out animation */
+}
+
 .S_search {
   width: 80%;
   height: 2rem;
@@ -17,11 +54,13 @@
   height: fit-content;
   position: relative;
 }
+
 .SB_icons{
   width: 12%;
   margin-right: 7%;
   height: 15%;
 }
+
 .input_search {
   height: 2rem;
   width: 100%;
@@ -83,6 +122,9 @@
 .S_list {
   margin-top: 10%;
 }
+.sicon{
+  margin-right: 100%;
+}
 
 .a {
   font-size: 0.7rem;
@@ -137,10 +179,12 @@
   box-shadow: 0 -20px 0 0 #cecab9;
 }
 
+
+
 /*TODO: clean it all up, finish flex, add aesthetics, icons, redefine to be relative to vh-vw, maybe rework v2 variant using scss and frames and real transitions? */
 .Sidebar_profile_section {
   width: 100%;
-  height: 25%;
+  height: 15%;
   padding-top: 2%;
 }
 .infocardContainer {
@@ -151,6 +195,16 @@
   font-weight: 600;
   font-style: italic;
   font-family: "Fira Sans Condensed", sans-serif;
+}
+.S_list {
+  margin-top: 10%;
+  transition: all 0.5s ease-in-out; /* Add transition for smooth animation */
+}
+
+.S_list.collapsed {
+  margin-top: 0;
+  opacity: 0; /* Hide the content */
+  pointer-events: none; /* Disable pointer events */
 }
 a {
   text-decoration: none;
@@ -177,29 +231,31 @@ a {
 .infocardContainer {
   display: flex;
   height: 100px;
-  width: 100px;
+  width: 0%;
   border-radius: 100px;
   background: rgb(0, 159, 255);
   background: linear-gradient(121deg, #12203d 13%, #fbc03e 100%);
   transition: all 500ms ease-in;
   transition-delay: 1s;
-  margin: auto;
+  margin: 0;
+  margin-top: 5%;
+  margin-left: 20%;
 }
 .infocardContainer:hover {
-  width: 250px;
+  width: 100px;
   border-radius: 100px 100px 10px 100px;
   transition: all 1s ease-out;
 }
 
+
 .infocardContainer .divi {
   color: white;
-  flex-shrink: 1;
+
   width: 100%;
   --background-color: green;
 }
 .infocardContainer div * {
-  display: flex;
-  --flex: inherit;
+
   overflow: hidden;
   text-overflow: hidden;
   --background-color: yellow;
@@ -212,7 +268,7 @@ a {
 }
 .infocardContainer:hover div * {
   --background-color: purple;
-  display: flex;
+
   visibility: visible;
   transition: all 1s ease-out;
   transition-delay: 500ms;
@@ -259,6 +315,4 @@ a {
   --margin: 0 1px 0 1px;
   border-radius: 25px;
 }
-.S_search {
 
-}
