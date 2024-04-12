@@ -23,7 +23,7 @@ const Sidebar = () => {
   return (
     <div className={`Sidebar_component ${collapsed ? 'collapsed' : ''}`}>
       <div className="Sidebar_profile_section">
-        <div class="infocardContainer">
+        <div onClick={toggleSidebar} class="infocardContainer">
           <div className="divi" id="main">
             <img src={prof} alt="" />
           </div>
@@ -72,14 +72,14 @@ const Sidebar = () => {
         <div className="Sbar_line"></div>
         <div className="SB_team">
           <p className="SB_subtitle">PLANING</p>
-          <a className="a">
+          <Link to="/timeline" className="a">
             <MdViewTimeline className="SB_icons" />
             Timeline
-          </a>
-          <a className="a">
+          </Link>
+          <Link to="/task" className="a">
             <GrPlan className="SB_icons" />
             Tasks
-          </a>
+          </Link>
           <a className="a">
             <AiOutlineIssuesClose className="SB_icons" />
             Issue
@@ -98,8 +98,6 @@ const Sidebar = () => {
           PROJECT SETTING
         </a>
       </div>
-
-      <button onClick={toggleSidebar}>Toggle Sidebar</button>
     </div>
   );
 };

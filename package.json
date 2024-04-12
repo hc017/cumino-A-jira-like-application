@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@bitnoi.se/react-scheduler": "^0.1.5",
+    "@bryntum/welcome": "^1.0.3",
     "@fontsource/roboto": "^5.0.8",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -10,6 +12,7 @@
     "bcrypt": "^5.1.1",
     "cords": "^1.0.4",
     "cors": "^2.8.5",
+    "dhtmlx-scheduler": "^7.0.3",
     "express": "^4.19.2",
     "mongodb": "^6.5.0",
     "mongoose": "^8.2.4",
