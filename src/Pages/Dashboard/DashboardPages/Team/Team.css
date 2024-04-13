@@ -20,13 +20,7 @@
   height: 50%;
   /* background-color: #8e8b7f; */
   display: flex;
-  overflow-y: auto;
-}
-.TeamBoard_DW{
-  background-color: #8e8b7f;
-  margin: 0;
-
-  overflow-x: auto;
+  overflow-y: scroll;
 }
 
 .TeamBoard_UP::-webkit-scrollbar {

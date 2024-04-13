@@ -5,6 +5,7 @@ import Rlogo from "./Cumin_logo.png";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import AfterSignUpForm from "../Profile/AfterSignUpForm";
 
 const SignIn = () => {
   const [username, setUsername] = useState("");
@@ -103,7 +104,7 @@ const SignIn = () => {
                         <FaGithub className="new-Glogo" />
                       </Link>
                     </div>
-                    <Link to='/dashboard' class="new-button new-input-box">
+                    <Link to="/siginupform" class="new-button new-input-box">
                       <input type="submit" value="Submit" />
                     </Link>
                     <div class="new-text sign-up-text">

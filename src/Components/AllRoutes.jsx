@@ -7,7 +7,8 @@ import {
 import Home from '../Pages/Home/Home'
 import SignIn from '../Pages/SignIn/SignIn'
 import DashboardMain from '../Pages/Dashboard/DashboardMain'
-import DashboardRoutes from '../Pages/Dashboard/DashboardRoutes'
+import AfterSignUpForm from '../Pages/Profile/AfterSignUpForm'
+
 
 
 
@@ -20,8 +21,7 @@ function AllRoutes() {
     <Route path='/' element={<Home/>}></Route> 
     <Route path='/signin' element={<SignIn/>}></Route> 
     <Route path='/dashboard' element={<DashboardMain/>}></Route> 
-
-  
+    <Route path='/siginupform' element={<AfterSignUpForm/>}></Route> 
     </Routes>
     </>
   )
