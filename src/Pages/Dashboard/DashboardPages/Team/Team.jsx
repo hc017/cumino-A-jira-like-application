@@ -26,23 +26,26 @@ const Team = () => {
             </select>
           </div>
           <div className="Tcard">
-          <TeamPlayerCard />
-        </div>
-        <div className="Tcard">
-          <TeamPlayerCard />
-        </div>
-        <div className="Tcard">
-          <TeamPlayerCard />
-        </div>
+            <TeamPlayerCard />
+          </div>
+          <div className="Tcard">
+            <TeamPlayerCard />
+          </div>
+          <div className="Tcard">
+            <TeamPlayerCard />
+          </div>
+          <div className="Tcard">
+            <TeamPlayerCard />
+          </div>
+          <div className="Tcard">
+            <TeamPlayerCard />
+          </div>
         </div>
         <div className="TeamBoard_DW">
-          <ActivityFeed/>
-
-
+          <ActivityFeed />
         </div>
       </div>
     </div>
-
   );
 };
 

@@ -40,12 +40,13 @@ h1{
 .card1 {
   width: 250px;
   height: 250px;
+  color: white;
   outline: none;
   border: none;
-  background: white;
+  background-color: #2222229c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 90px 5px 5px 5px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+ 
   transition: 0.2s ease-in-out;
 }
 
@@ -59,11 +60,12 @@ h1{
   width: 250px;
   height: 250px;
   outline: none;
+  color: white;
   border: none;
   background: white;
   border-radius: 5px 90px 5px 5px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: #2222229c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: 0.2s ease-in-out;
 }
 
@@ -77,11 +79,12 @@ h1{
   width: 250px;
   height: 250px;
   outline: none;
+  color: white;
   border: none;
   background: white;
   border-radius: 5px 5px 5px 90px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: #2222229c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: 0.2s ease-in-out;
 }
 
@@ -94,11 +97,12 @@ h1{
   width: 250px;
   height: 250px;
   outline: none;
+  color: white;
   border: none;
   background: white;
   border-radius: 5px 5px 90px 5px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: #2222229c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: 0.2s ease-in-out;
 }
 
@@ -141,7 +145,7 @@ h1{
 .card4:hover {
   cursor: pointer;
   scale: 1.1;
-  background-color: #8c9eff;
+  background-color: #E7700D;
 }
 
 .card4:hover .discord {

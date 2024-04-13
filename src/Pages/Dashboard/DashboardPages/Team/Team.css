@@ -16,10 +16,25 @@
   width: 90%;
 
 }
-.TeamBoard_UP{
+.TeamBoard_UP {
   height: 50%;
   /* background-color: #8e8b7f; */
   display: flex;
+  overflow-y: auto;
+}
+.TeamBoard_DW{
+  background-color: #8e8b7f;
+  margin: 0;
+
+  overflow-x: auto;
+}
+
+.TeamBoard_UP::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar width */
+}
+
+.TeamBoard_UP::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Hide scrollbar thumb */
 }
 
 .TeamDash{
