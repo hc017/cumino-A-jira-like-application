@@ -88,10 +88,10 @@ const Sidebar = () => {
         <div className="Sbar_line"></div>
         <div className="SB_team">
           <p className="SB_subtitle">PRODUCTION</p>
-          <a className="a">
+          <Link to="/productioncode"  className="a">
             <IoCodeSlash className="SB_icons" />
             Code
-          </a>
+          </Link>
         </div>
 
         <a className="a" id="aset">

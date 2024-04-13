@@ -7,6 +7,7 @@ import Team from "./DashboardPages/Team/Team";
 import Timeline from "./DashboardPages/Planing/TimeLine/Timeline";
 import Task from "./DashboardPages/Planing/Tasks/Task";
 import IssueCreation from "./DashboardPages/Planing/Issue/IssueCreation";
+import ProductionCode from "./DashboardPages/Production/ProductionCode";
 
 function DashboardRoutes() {
   return (
@@ -16,6 +17,7 @@ function DashboardRoutes() {
       <Route path="/timeline" element={<Timeline />} />
       <Route path="/task" element={<Task/>} />
       <Route path="/issue" element={<IssueCreation/>} />
+      <Route path="/productioncode" element={<ProductionCode/>} />
     </Routes>
   );
 }

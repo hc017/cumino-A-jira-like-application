@@ -7,6 +7,14 @@ import Staytuned from "../../Components/StayTuned/Staytuned";
 import SignIn from "../SignIn/SignIn";
 import { Link } from "react-router-dom";
 import girl from "./h_girl.png"
+import { IoSearchOutline } from "react-icons/io5";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { SiGooglemeet } from "react-icons/si";
+import { IoChatboxEllipsesOutline } from "react-icons/io5";
+import { MdViewTimeline } from "react-icons/md";
+import { GrPlan } from "react-icons/gr";
+import { AiOutlineIssuesClose } from "react-icons/ai";
+import { IoCodeSlash } from "react-icons/io5";
 
 function Home() {
   const [featuredData, setFeaturedData] = useState(null);
@@ -40,10 +48,15 @@ function Home() {
           </div>
           {/* <img className="hgirl" src={girl} alt="" /> */}
           <div className="Hbar">
-
+            <FaPeopleGroup className="Hbar_icons"/>
+            <SiGooglemeet className="Hbar_icons"/>
+            <IoChatboxEllipsesOutline className="Hbar_icons"/>
+            <MdViewTimeline className="Hbar_icons"/>
+            <GrPlan className="Hbar_icons"/>
+            <AiOutlineIssuesClose className="Hbar_icons"/>
+            <IoCodeSlash className="Hbar_icons"/>
           </div>
         </div>
-
         <Secondsection />
         <ThirdSection />
         <Staytuned />
