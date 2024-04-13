@@ -6,6 +6,7 @@ import ProjectOverview from "./DashboardPages/Project/ProjectOverview";
 import Team from "./DashboardPages/Team/Team";
 import Timeline from "./DashboardPages/Planing/TimeLine/Timeline";
 import Task from "./DashboardPages/Planing/Tasks/Task";
+import IssueCreation from "./DashboardPages/Planing/Issue/IssueCreation";
 
 function DashboardRoutes() {
   return (
@@ -14,6 +15,7 @@ function DashboardRoutes() {
       <Route path="/teamates" element={<Team />} />
       <Route path="/timeline" element={<Timeline />} />
       <Route path="/task" element={<Task/>} />
+      <Route path="/issue" element={<IssueCreation/>} />
     </Routes>
   );
 }

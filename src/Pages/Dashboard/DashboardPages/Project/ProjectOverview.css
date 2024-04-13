@@ -8,4 +8,123 @@
     #a5a294 49%,
     #8e8b7f 100%
   );
+  display: flex;
+}
+
+.PO_innerComponent {
+  width: 95%;
+  height: 100vh;
+  overflow-y: auto;
+
+}
+
+.PO_greeting {
+  width: 85%;
+  height: 40%;
+
+  margin-left: 7%;
+  padding-top: 5%;
+}
+
+.PO_text_box {
+  width: 60%;
+  height: 60%;
+  margin-left: 20%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use a better font-family */
+  border-radius: 1rem;
+  animation: fadeIn 2s ease; /* Add animation */
+}
+
+.POtitle {
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.PO_featureComp {
+  width: 50%;
+  height: 3rem;
+  margin-left: 25%;
+  margin-top: 5%;
+  border-radius: 2rem;
+  border: 1px solid #747474;
+  background-color: #2222229c;
+  display: flex;
+  justify-content: center; /* Align content horizontally in center */
+  align-items: center; /* Align content vertically in center */
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adjust the shadow parameters as needed */
+}
+
+.PO_butn{
+  width: 50%;
+  height: 3rem;
+  font-size: 1rem;
+  color: white;
+  background-color: transparent;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center; /* Align content horizontally in center */
+  align-items: center; /* Align content vertically in center */
+  justify-items: center;
+  text-align: center;
+}
+.PO_icon{
+  width: 25%;
+  height: 80%;
+  margin-right: 2%;
+}
+.PO_down_part{
+  width: 100%;
+  height: 60%;
+  /* background-color: #a5a294; */
+  display: flex;
+}
+.Po_BOx {
+  width: 35%;
+  margin-left: 10%;
+  border-radius: 2rem;
+  height: 85%;
+  background-color: #2222229c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease; /* Add a transition for smooth animation */
+}
+
+.Po_BOx:hover {
+  transform: translateY(-5px); /* Move the button up on hover */
+}
+
+.POBOX_icon {
+  width: 60%;
+  height: 60%;
+  color: #222222f6;
+  margin-left: 20%;
+  margin-top: 5%;
+  transition: transform 0.3s ease; /* Add a transition for smooth animation */
+}
+
+.POBOX_icon:hover {
+  transform: scale(1.2); /* Scale up the icon on hover */
+}
+
+.btn_title_PO_box {
+  width: 100%;
+  height: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 5%;
+  color: #222222;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  transition: color 0.3s ease; /* Add a transition for smooth color change */
+}
+
+.Po_BOx:hover .btn_title_PO_box {
+  color: #ffffff; /* Change text color on hover */
 }

@@ -109,6 +109,10 @@ const Task = () => {
     setTodos(newToDo);
     setCurrentEdit("");
   };
+  // Function to generate dummy assignee options
+  const getAssigneeOptions = () => {
+    return ["John Doe", "Jane Smith", "Alice Johnson", "Bob Brown"];
+  };
 
   return (
     <div className="Task_Component">
@@ -139,13 +143,21 @@ const Task = () => {
                   />
                 </div>
                 <div className="todo-input-item">
-                  <label>Assign to?</label>
-                  <input
-                    type="text"
+                  <label htmlFor="assignTo">Assign to?</label>
+                  <select
+                    id="assignTo"
                     value={todoAssign}
                     onChange={(e) => setTODOAssign(e.target.value)}
                     placeholder="Task is Assign to??"
-                  />
+                    required
+                  >
+                    <option value="">Select Assignee</option>
+                    {getAssigneeOptions().map((assignee, index) => (
+                      <option key={index} value={assignee}>
+                        {assignee}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </div>
             </div>
@@ -179,15 +191,15 @@ const Task = () => {
                   />
                 </div>
               </div>
-            <div className="todo-input-item">
-              <button
-                type="button"
-                onClick={handleAddTodo}
-                className="primaryBtn"
-              >
-                Add
-              </button>
-            </div>
+              <div className="todo-input-item">
+                <button
+                  type="button"
+                  onClick={handleAddTodo}
+                  className="primaryBtn"
+                >
+                  Add
+                </button>
+              </div>
             </div>
 
             <div className="btn-area">
@@ -242,11 +254,12 @@ const Task = () => {
                       <div className="todo-list-item" key={index}>
                         <div>
                           <h3>{item.task}</h3>
-                          <p>{item.startDate} to {item.endDate}  </p>
-                          
+                          <p>
+                            {item.startDate} to {item.endDate}{" "}
+                          </p>
                         </div>
                         <div>
-                        <h3>{item.taskAssign}</h3>
+                          <h3>{item.taskAssign}</h3>
                         </div>
 
                         <div>

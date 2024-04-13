@@ -1,0 +1,116 @@
+.IC_container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(
+      156deg,
+      #f4efdb 2%,
+      #e9e5d1 2%,
+      #a5a294 49%,
+      #8e8b7f 100%
+    );
+    display: flex;
+    position: relative; /* Added for positioning */
+}
+
+
+.issuecreationcontainer {
+    width: 60%;
+    height: 70%;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 20px;
+    background: #353434;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0px 5px 7px rgb(27, 27, 27);
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .issue-creation-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  .ICformgroup {
+    margin-bottom: 15px;
+  }
+  
+  .ICformgroup label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .ICformgroup input,
+  .ICformgroup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #8d8d8d;
+    border-radius: 5px;
+  }
+  .ICformgroup input{
+    background-color: #313131;
+
+  }
+  
+  .ICformgroup textarea {
+    resize: vertical;
+    min-height: 100px;
+    background-color: #313131;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #121f3ba4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button[type="button"] {
+    padding: 10px 20px;
+    background-color: #121f3ba4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 2%;
+  }
+
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  .issueTableContainer {
+    margin-top: 20px;
+  }
+  
+  .issueTableContainer h2 {
+    margin-bottom: 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #7d7d7d;
+    padding: 8px;
+    color: white;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #121f3ba4;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #dddddd3a;
+  }
+  

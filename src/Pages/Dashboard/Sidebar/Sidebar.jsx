@@ -80,10 +80,10 @@ const Sidebar = () => {
             <GrPlan className="SB_icons" />
             Tasks
           </Link>
-          <a className="a">
+          <Link to="/issue" className="a">
             <AiOutlineIssuesClose className="SB_icons" />
             Issue
-          </a>
+          </Link>
         </div>
         <div className="Sbar_line"></div>
         <div className="SB_team">
