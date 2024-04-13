@@ -1,0 +1,102 @@
+.AFS_component{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(
+      156deg,
+      #f4efdb 2%,
+      #e9e5d1 2%,
+      #a5a294 49%,
+      #8e8b7f 100%
+      
+    );
+    display: flex;
+}
+.AFS_Left{
+    width: 35%;
+    height: 100%;
+    padding-left: 5%;
+}
+.AFS_Right{
+    width: 65%;
+    height: 100%;
+    /* background-color: rgb(119, 119, 84); */
+}
+.AFS_title,.formtile{
+    width: 100%;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3rem;
+}
+.formtile{
+    margin:0;
+    color: white;
+}
+.AFS_subtitile{
+    width: 100%;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+
+}
+.AFS_Form_Container {
+    max-width: 70%;
+    min-height: 85%;
+    background: #353434; /* Matched background color */
+    border-radius: 40px;
+    padding: 25px 35px;
+    margin-left: 20%;
+    margin-top: 5%;
+    border: 5px solid #3534348a;
+    box-shadow: 0px 30px 30px -20px rgba(38, 39, 40, 0.878);
+}
+.formgroup{
+    margin-top: 20px;
+    display: flex;
+}
+.formgroup input {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    border-inline: 2px solid transparent;
+  }
+  .formgroup input::-moz-placeholder {
+    color: rgb(170, 170, 170);
+  }
+  
+  .formgroup input::placeholder {
+    color: rgb(170, 170, 170);
+  }
+  .formgroup input:focus {
+    outline: none;
+    border-inline: 2px solid #12B1D1;
+  }
+  .formgroup label{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+    margin-right: 5%;
+  }
+  .Vilabel{
+    width: 20%;
+    margin-top: 1.5%;
+    margin-left: 5%;
+  }
+  .VIinput{
+    width: 60%;
+    margin: 0;
+    margin-left: 10%;
+
+  }
+  #ASFbtn{
+    margin-top: 5%;
+    align-items: center;
+    margin-left: 2%;
+  }
+  .AFSbtndiv{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    padding-left: 50%;
+    margin-top: 5%;
+  }

@@ -17,23 +17,23 @@ const ProjectOverview = () => {
             <h3 className="POtitle">Saturday, April 13</h3>
             <h1 className="PO_tilteH1">Good Evening, HC</h1>
             <div className="PO_featureComp">
-              <button className=" PO_butn">
+              <Link to="/viewprojet" className=" PO_butn">
                 <MdOutlineTaskAlt className="PO_icon" />
                 Projects
-              </button>
-              <button className=" PO_butn">
+              </Link>
+              <Link to="/profile" className=" PO_butn">
                 <CgProfile className="PO_icon" />
                 Profile
-              </button>
+              </Link>
             </div>
           </div>
         </div>
         <div className="PO_down_part">
-          <Link className="Po_BOx">
+          <Link to="/addprojectform" className="Po_BOx">
             <IoAddCircleOutline className="POBOX_icon" />
             <p className="btn_title_PO_box">Add Project</p>
           </Link>
-          <Link className="Po_BOx">
+          <Link to="/viewproject" className="Po_BOx">
             <MdOutlineCalendarViewDay className="POBOX_icon" />
 
             <p className="btn_title_PO_box">View Projects</p>
