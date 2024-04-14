@@ -1,0 +1,48 @@
+.VPDown{
+    width: 100%;
+    height: 60%;
+    /* background-color: aqua; */
+    overflow-x: auto;
+}
+.h1VP{
+    margin: 0;
+}
+.projectreact{
+    width: 80%;
+    height: 20%;
+    background-color: #2222229c;
+    border-radius: 0.5rem;
+    border: 1px solid #747474;
+    margin-left: 10%;
+    margin-top: 2%;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adjust the shadow parameters as needed */
+}
+.PR_left{
+    width: 50%;
+    
+}
+.PR_right{
+    width: 50%;
+
+}
+.subPRtitles{
+    display: flex;
+}
+.prtitle{
+    font-size: 2rem;
+    margin-left: 5%;
+    margin-top: 2%;
+    color: aliceblue;
+}
+.subprtitle{
+    color: aliceblue;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-left: 5%;
+    margin-top: 3%;
+}
+.PRedit_btn{
+    margin-left: 75%;
+    margin-top: 5.5%;
+}

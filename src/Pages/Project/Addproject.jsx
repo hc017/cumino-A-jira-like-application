@@ -3,7 +3,6 @@ import "./Addproject.css";
 import PRN from "./PRM.mp4";
 import { useNavigate } from "react-router-dom";
 
-
 const Addproject = () => {
   const [role, setRole] = useState("");
   const [teamSize, setTeamSize] = useState("");
@@ -35,12 +34,11 @@ const Addproject = () => {
     navigate("/projectoverview");
   };
 
-
   return (
     <div className="addproject_container">
       <div className="Ac_left">
         <div className="AFS_Form_Container" id="AC_containerform">
-        <form onSubmit={handleSubmitProject}>
+          <form onSubmit={handleSubmitProject}>
             <h1 className="formtile">Project Details</h1>
             <div className="formgroup">
               <div className="Vilabel">
@@ -141,14 +139,17 @@ const Addproject = () => {
               </div>
             </div>
             <div className="teamMembers">
-                <button className="addbutn"
-                  type="button"
-                  onClick={handleAddTeamMembers}
-                >
-                  Add
-                </button>
+              <button
+                className="addbutn"
+                type="button"
+                onClick={handleAddTeamMembers}
+              >
+                Add
+              </button>
               {teamMembers.map((member, index) => (
-                <div className="viewmwm" key={index}>{member}</div>
+                <div className="viewmwm" key={index}>
+                  {member}
+                </div>
               ))}
             </div>
             <div className="AFSbtndiv">

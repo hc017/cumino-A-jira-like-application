@@ -23,7 +23,7 @@ const ProjectOverview = () => {
           <h3 className="POtitle">{day}, {date}</h3>
             <h1 className="PO_tilteH1">Good {time.includes('AM') ? 'Morning' : 'Evening'}, HC</h1>
             <div className="PO_featureComp">
-              <Link to="/viewprojet" className=" PO_butn">
+              <Link to="/viewproject" className=" PO_butn">
                 <MdOutlineTaskAlt className="PO_icon" />
                 Projects
               </Link>
