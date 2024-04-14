@@ -93,10 +93,14 @@ const Sidebar = () => {
             Code
           </Link>
         </div>
-
         <a className="a" id="aset">
           PROJECT SETTING
         </a>
+        <Link >
+        <button id="logout" >
+          Logout
+          </button>
+        </Link>
       </div>
     </div>
   );

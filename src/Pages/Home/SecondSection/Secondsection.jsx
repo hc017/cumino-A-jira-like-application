@@ -1,5 +1,6 @@
 import React from "react";
 import "./Secondsection.css";
+import videoh from "./PRM.mp4";
 
 const Secondsection = () => {
   return (
@@ -12,16 +13,13 @@ const Secondsection = () => {
           </p>
           <p id="SS_subtext" className="SS_text">
             {" "}
-            The project management app built for Gen Z <br /> Stay on top of your game, without the stress.
+            The project management app built for Gen Z <br /> Stay on top of
+            your game, without the stress.
           </p>
-
         </div>
         <div className="SS_right_component">
           <div className="SS_R_videobg">
-            <video
-              src="https://www.youtube.com/watch?v=T5oS5DHtCt0"
-              className="SS_R_video"
-            ></video>
+            <video src={videoh} width="645" height="100%" loop muted></video>
           </div>
         </div>
       </div>
