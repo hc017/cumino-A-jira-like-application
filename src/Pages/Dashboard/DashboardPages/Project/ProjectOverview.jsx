@@ -32,6 +32,11 @@ const ProjectOverview = () => {
                 Profile
               </Link>
             </div>
+            <select name="Project" id="selectproject">
+              <option value="1">project1</option>
+              <option value="2">project2</option>
+              <option value="3">project3</option>
+            </select>
           </div>
         </div>
         <div className="PO_down_part">

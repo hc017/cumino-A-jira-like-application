@@ -1,0 +1,140 @@
+.Profile_container{
+    width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+    156deg,
+    #f4efdb 2%,
+    #e9e5d1 2%,
+    #a5a294 49%,
+    #8e8b7f 100%
+  );
+  display: flex;
+}
+.profileImg{
+    width: 30%;
+    height: 100%;
+}
+.profileform{
+    width: 40%;
+    height: 100%;
+    /* background-color: #8e8b7f; */
+
+}
+.profilelast{
+    width: 30%;
+    height: 100%;
+    background-color: aliceblue;
+}
+.pf_pic {
+    margin-top: 20%;
+    width: 60%;
+    height: 40%;
+    margin-left: 18%;
+    border-radius: 50%; /* Make sure it's a circle */
+    overflow: hidden; /* Hide overflow to keep it circular */
+    position: relative; /* Position for absolute positioning of image */
+}
+.profile_image {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover entire container */
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.151);
+}
+.profiletiel{
+    margin: 0;
+    margin-top: 20%;
+}
+.h2title{
+    width: 100%;
+    text-align: center;
+}
+.h2tagestitle{
+    margin-top: 10%;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+}
+/* Profile.css */
+
+.profileform {
+    width: 100%;
+   
+    box-sizing: border-box;
+  }
+  
+  .ppy5 {
+    min-height: 60%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding-left: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .textright {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  
+  .labels {
+    font-size: 16px;
+    color: #3e3e3e;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #4caf50;
+  }
+  
+  .profile-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .profile-button:hover {
+    background-color: #45a049;
+  }
+
+ .ppy4{
+    width: 60%;
+    height: 60%;
+    margin-left: 20%;
+    margin-top: 10%;
+    background: #353434; /* Matched background color */
+    border: 5px solid #3534348a;
+    box-shadow: 0px 30px 30px -20px rgba(38, 39, 40, 0.878);
+    border-radius: 2rem;
+
+ }
+.textrigt{
+    margin: 0;
+    margin-top: 2%;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+.paratext{
+    margin-top: 2%;
+    margin-left: 4%;
+    font-size: 1.5rem;
+    color: white;
+   font-family:Georgia, 'Times New Roman', Times, serif ;
+}
+#btneditprofile{
+    margin-top: 5%;
+    margin-left: 40%;
+}

@@ -19,7 +19,7 @@ const Secondsection = () => {
         </div>
         <div className="SS_right_component">
           <div className="SS_R_videobg">
-            <video src={videoh} width="645" height="100%" loop muted></video>
+            <video src={videoh} width="645" height="100%" controls loop muted></video>
           </div>
         </div>
       </div>
