@@ -16,6 +16,10 @@
   width: 90%;
 
 }
+.Tcards-container{
+  width: 100%;
+  display: flex;
+}
 .TeamBoard_UP {
   height: 50%;
   /* background-color: #8e8b7f; */

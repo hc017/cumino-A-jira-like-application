@@ -1,31 +1,29 @@
+// TeamPlayerCard.js
+
 import React from "react";
 import "./TeamPlayerCard.css";
 import { SiGooglemeet } from "react-icons/si";
 import { IoChatboxEllipses } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa6";
 
-
-
-
-const TeamPlayerCard = () => {
+const TeamPlayerCard = ({ name }) => {
   return (
     <div class="parent">
       <div class="card">
         <div class="glass"></div>
         <div class="content">
-          <span class="title">HC</span>
-          <span class="text">UI designer</span>
+          <span class="title">{name}</span> {/* Render teammate's name here */}
         </div>
         <div class="bottom">
           <div class="social-buttons-container">
             <button class="social-button .social-button1">
-            <SiGooglemeet class="svg" />
+              <SiGooglemeet class="svg" />
             </button>
             <button class="social-button .social-button2">
-            <IoChatboxEllipses  class="svg" />
+              <IoChatboxEllipses class="svg" />
             </button>
             <button class="social-button .social-button3">
-            <FaGithub  class="svg" />
+              <FaGithub class="svg" />
             </button>
           </div>
           <div class="view-more">

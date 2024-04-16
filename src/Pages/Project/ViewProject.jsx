@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./ViewProject.css";
 import Sidebar from "../Dashboard/Sidebar/Sidebar";
 import { MdOutlineTaskAlt } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const ViewProject = () => {
+  const [projects, setProjects] = useState([]);
+
+
+  useEffect(() => {
+    
+    // Fetch user's projects
+    const token = localStorage.getItem("token");
+   // Fetch projects created by the user
+    axios
+      .get("http://localhost:5000/api/users/userprojects", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        setProjects(response.data.projects);
+      })
+      .catch((error) => {
+        console.error("Error fetching user's projects:", error);
+      });
+  }, []);
+
   const currentDate = new Date();
   const day = currentDate.toLocaleDateString(undefined, { weekday: "long" });
   const date = currentDate.toLocaleDateString(undefined, {
@@ -17,6 +40,7 @@ const ViewProject = () => {
     minute: "numeric",
     hour12: true,
   });
+
   return (
     <div className="PO_component">
       <Sidebar />
@@ -42,55 +66,23 @@ const ViewProject = () => {
           </div>
         </div>
         <div className="VPDown">
-
-
           <h1 className="h1VP">View Projects</h1>
-
-
-          <div className="projectreact">
-            <div className="PR_left">
-              <p className="prtitle">Project title</p>
-              <div className="subPRtitles">
-                <p className="subprtitle">Owner Name</p>
-                <p className="subprtitle">team member count</p>
-                <p className="subprtitle">project id</p>
+          {projects.map((project, index) => (
+            <div className="projectreact" key={index}>
+              <div className="PR_left">
+                <p className="prtitle">{project.projectName}</p>
+                <div className="subPRtitles">
+                  {/* You can replace placeholder text with actual data */}
+                  <p className="subprtitle">Owner Name: {project.ownerName}</p>
+                  <p className="subprtitle">Team member count: {project.teamMembers.length}</p>
+                  <p className="subprtitle">Project ID: {project._id}</p>
+                </div>
+              </div>
+              <div className="PR_right">
+                <button className="PRedit_btn">Edit Details</button>
               </div>
             </div>
-            <div className="PR_right">
-              <button className="PRedit_btn">Edit Details</button>
-            </div>
-          </div>
-
-
-          <div className="projectreact">
-            <div className="PR_left">
-              <p className="prtitle">Project title</p>
-              <div className="subPRtitles">
-                <p className="subprtitle">Owner Name</p>
-                <p className="subprtitle">team member count</p>
-                <p className="subprtitle">project id</p>
-              </div>
-            </div>
-            <div className="PR_right">
-              <button className="PRedit_btn">Edit Details</button>
-            </div>
-          </div>
-
-
-          <div className="projectreact">
-            <div className="PR_left">
-              <p className="prtitle">Project title</p>
-              <div className="subPRtitles">
-                <p className="subprtitle">Owner Name</p>
-                <p className="subprtitle">team member count</p>
-                <p className="subprtitle">project id</p>
-              </div>
-            </div>
-            <div className="PR_right">
-              <button className="PRedit_btn">Edit Details</button>
-            </div>
-          </div>
-          
+          ))}
         </div>
       </div>
     </div>
