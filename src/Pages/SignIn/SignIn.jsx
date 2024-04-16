@@ -5,52 +5,72 @@ import Rlogo from "./Cumin_logo.png";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import AfterSignUpForm from "../Profile/AfterSignUpForm";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 const SignIn = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation(); // Use useLocation hook to access location state
+  const { state } = location; // Destructure state from location
+  const [userId, setUserId] = useState(""); // Define userId state
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-      if (!response.ok) {
-        throw new Error("Invalid credentials");
+      const url = "http://localhost:5000/api/users/login";
+      const response = await axios.post(url, { email, password });
+  
+      if (response.status === 200) {
+        const { token, userEmail } = response.data;
+        localStorage.setItem("token", token);
+        localStorage.setItem("userEmail", userEmail); // Store userEmail in localStorage
+        window.alert("Login Successfully!!!");
+        navigate("/siginupform");
+      } else {
+        setError("Incorrect email or password");
       }
-      // Redirect or perform other actions upon successful login
     } catch (error) {
-      setError(error.message);
+      console.error("Error logging in:", error);
+      setError("Internal server error");
     }
   };
+  
+  
+  
 
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/users/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, email, password }),
+      const url = "http://localhost:5000/api/users/signup";
+      const response = await axios.post(url, {
+        username,
+        email,
+        password
       });
-      console.log("Signup success");
-      if (!response.ok) {
-        console.log("Signup failed");
+  
+      console.log("Response status:", response.status);
+      console.log("Response data:", response.data);
+  
+      if (response.status === 201) {
+        // User created successfully, you can handle the response here
+        // For example, if you want to navigate to another page
+        window.alert("Registered Successfully. Now go back and login.");
+        navigate("/");
+      } else {
+        setError("Something went wrong");
       }
-      // Redirect or perform other actions upon successful signup
     } catch (error) {
-      setError(error.message);
+      console.error("Error signing up:", error);
+      setError("Internal server error");
     }
   };
+  
+  
 
   return (
     <div className="SignIn">
@@ -97,14 +117,14 @@ const SignIn = () => {
                       <a href="#">Forgot password?</a>
                     </div>
                     <div className="new-GGlogo">
-                      <Link className="new-LGlogo">
+                      <Link onClick={handleLogin} className="new-LGlogo">
                         <FcGoogle className="new-Glogo" />
                       </Link>
                       <Link className="new-LGlogo">
                         <FaGithub className="new-Glogo" />
                       </Link>
                     </div>
-                    <Link to="/siginupform" class="new-button new-input-box">
+                    <Link  class="new-button new-input-box">
                       <input type="submit" value="Submit" />
                     </Link>
                     <div class="new-text sign-up-text">

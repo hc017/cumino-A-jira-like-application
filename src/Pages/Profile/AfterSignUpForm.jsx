@@ -1,18 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AfterSignUpForm.css";
 import Flogo from "./Cumin_logo.png";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const AfterSignUpForm = () => {
-
   const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
+  const [error, setError] = useState(""); // Define error state
+  const location = useLocation(); // Use useLocation hook to access location state
+  const { state } = location; // Destructure state from location
+  // Initialize state variables
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [college, setCollege] = useState("");
+  const [designation, setDesignation] = useState("");
+  const [github, setGithub] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you can add code to process the form submission
-    // After processing, navigate to the Project Overview page
-    navigate("/projectoverview");
+
+    try {
+      const token = localStorage.getItem("token");
+      const userEmail = localStorage.getItem("userEmail");
+
+      if (!token || !userEmail) {
+        console.error("Token or userEmail not found in localStorage");
+        return;
+      }
+
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      const formData = {
+        fullName,
+        college,
+        designation,
+        github,
+        mobile,
+        whatsapp,
+        email: userEmail, // Pass the userEmail to the backend
+      };
+
+      const response = await axios.post("http://localhost:5000/api/users/addi", formData, config);
+
+      console.log(response.data);
+      window.alert("Data added");
+      navigate("/projectoverview")
+      // Optionally, you can navigate to another page upon successful submission
+    } catch (error) {
+      console.error("Error storing additional details:", error);
+      setError("Internal server error");
+    }
   };
+
 
 
   return (
@@ -29,7 +76,7 @@ const AfterSignUpForm = () => {
       </div>
       <div className="AFS_Right">
         <div className="AFS_Form_Container">
-          <form onSubmit={handleSubmit}>
+          <form>
             <h1 className="formtile">Lets know You...</h1>
             <div className="formgroup">
               <div className="Vilabel">
@@ -39,27 +86,15 @@ const AfterSignUpForm = () => {
                 <input
                   type="text"
                   id="fullname"
-                  name="fullname"
+                  name="fullName"
                   placeholder="Enter your full name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
                   required
                 />
               </div>
             </div>
-            <div className="formgroup">
-              <div className="Vilabel">
-                <label htmlFor="email">Email:</label>
-              </div>
-              <div className="VIinput">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Enter your
-                email address"
-                  required
-                />
-              </div>
-            </div>
+
             <div className="formgroup">
               <div className="Vilabel">
                 <label htmlFor="college">College/University:</label>
@@ -70,6 +105,8 @@ const AfterSignUpForm = () => {
                   id="college"
                   name="college"
                   placeholder="Enter your college/university"
+                  value={college}
+                  onChange={(e) => setCollege(e.target.value)}
                   required
                 />
               </div>
@@ -84,6 +121,8 @@ const AfterSignUpForm = () => {
                   id="designation"
                   name="designation"
                   placeholder="Enter your designation"
+                  value={designation}
+                  onChange={(e) => setDesignation(e.target.value)}
                   required
                 />
               </div>
@@ -93,13 +132,14 @@ const AfterSignUpForm = () => {
                 <label htmlFor="github">GitHub Profile:</label>
               </div>
               <div className="VIinput">
-                {/* <input
-                  type="url"
+                <input
+                  type="text"
                   id="github"
                   name="github"
                   placeholder="Enter your GitHub profile link"
-                
-                /> */}
+                  value={github}
+                  onChange={(e) => setGithub(e.target.value)}
+                />
               </div>
             </div>
             <div className="formgroup">
@@ -108,10 +148,12 @@ const AfterSignUpForm = () => {
               </div>
               <div className="VIinput">
                 <input
-                  type="tel"
+                  type="text"
                   id="mobile"
                   name="mobile"
                   placeholder="Enter your mobile number"
+                  value={mobile}
+                  onChange={(e) => setMobile(e.target.value)}
                   required
                 />
               </div>
@@ -122,19 +164,21 @@ const AfterSignUpForm = () => {
               </div>
               <div className="VIinput">
                 <input
-                  type="tel"
+                  type="text"
                   id="whatsapp"
                   name="whatsapp"
                   placeholder="Enter your WhatsApp number"
+                  value={whatsapp}
+                  onChange={(e) => setWhatsapp(e.target.value)}
                   required
                 />
               </div>
             </div>
             <div className="AFSbtndiv">
-              <button id="ASFbtn" type="submit">
+              <button onClick={handleSubmit} id="ASFbtn" type="submit">
                 Submit
               </button>
-              <button id="ASFbtn" type="submit">
+              <button id="ASFbtn" type="reset">
                 Clear
               </button>
             </div>
