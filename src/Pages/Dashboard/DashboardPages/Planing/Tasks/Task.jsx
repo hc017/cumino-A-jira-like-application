@@ -67,7 +67,7 @@ const Task = () => {
 
 
 
-  const handleAddTodo = () => {
+  const handleAddTodo = async () => {
     let newTodoItem = {
       name: todoname,
       task: todotask,
@@ -81,6 +81,53 @@ const Task = () => {
     updatedTodoArr.push(newTodoItem);
     setTodos(updatedTodoArr);
     localStorage.setItem("todolist", JSON.stringify(updatedTodoArr));
+
+    try {
+      const token = localStorage.getItem("token");
+      const userEmail = localStorage.getItem("userEmail");
+
+      if (!token || !userEmail) {
+        console.error("Token or userEmail not found in localStorage");
+        return;
+      }
+
+        // Store user's email in state
+        setUserEmail(userEmail);
+
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+  
+      const taskData = {
+        name: todoname,
+        task: todotask,
+        taskAssign: todoAssign,
+        startDate: newStartdate,
+        endDate: newEnddate,
+        description: newDescription,
+        projectId: selectedProjectId,
+        ProjUserEmail: userEmail // Pass the selected project ID
+      };
+  
+      const response = await axios.post(
+        "http://localhost:5000/api/users/tasks/add",
+        taskData,
+        config
+      );
+  
+      console.log("Task added successfully:", response.data);
+      // Optionally, you can clear the input fields or update state as needed
+      setTODOName("");
+      setTODOTask("");
+      setTODOAssign("");
+      setNewStartDate("");
+      setNewEndDate("");
+      setNewDescription("");
+    } catch (error) {
+      console.error("Error adding task:", error);
+    }
   };
 
   const handleDeleteTodo = (index) => {
@@ -89,6 +136,7 @@ const Task = () => {
 
     localStorage.setItem("todolist", JSON.stringify(reducedTodo));
     setTodos(reducedTodo);
+
   };
 
 
