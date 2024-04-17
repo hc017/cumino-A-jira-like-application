@@ -12,7 +12,7 @@ const ActivityFeed = () => {
           </time>
           <span className="text">
             Responded to need{" "}
-            <a href="single-need.php">“Volunteer opportunity”</a>
+            <a href="single-need.php">“Log in”</a>
           </span>
         </li>
         <li className="feed-item">
@@ -21,7 +21,7 @@ const ActivityFeed = () => {
           </time>
           <span className="text">
             Responded to need{" "}
-            <a href="single-need.php">“Volunteer opportunity”</a>
+            <a href="single-need.php">“Data Added”</a>
           </span>
         </li>
         <li className="feed-item">
@@ -30,7 +30,7 @@ const ActivityFeed = () => {
           </time>
           <span className="text">
             Responded to need{" "}
-            <a href="single-need.php">“Volunteer opportunity”</a>
+            <a href="single-need.php">“Project Created”</a>
           </span>
         </li>
         <li className="feed-item">
@@ -39,18 +39,10 @@ const ActivityFeed = () => {
           </time>
           <span className="text">
             Responded to need{" "}
-            <a href="single-need.php">“Volunteer opportunity”</a>
+            <a href="single-need.php">“Project Selected”</a>
           </span>
         </li>
-        <li className="feed-item">
-          <time className="date">
-            User
-          </time>
-          <span className="text">
-            Responded to need{" "}
-            <a href="single-need.php">“Volunteer opportunity”</a>
-          </span>
-        </li>
+    
       </ol>
     </div>
   );

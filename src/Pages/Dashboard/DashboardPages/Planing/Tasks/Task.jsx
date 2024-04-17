@@ -4,6 +4,8 @@ import Sidebar from "../../../Sidebar/Sidebar";
 import { useState, useEffect } from "react";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { BsCheckLg } from "react-icons/bs";
+import Timeline from '../TimeLine/Timeline'
+import { useNavigation } from "react-router-dom";
 
 const Task = () => {
   const [isCompleteScreen, setIsCompleteScreen] = useState(false);
@@ -17,6 +19,12 @@ const Task = () => {
   const [completedTodos, setCompletedTodos] = useState([]);
   const [currentEdit, setCurrentEdit] = useState("");
   const [currentEditedItem, setCurrentEditedItem] = useState("");
+
+
+
+   
+
+
 
   const handleAddTodo = () => {
     let newTodoItem = {
@@ -41,6 +49,7 @@ const Task = () => {
     localStorage.setItem("todolist", JSON.stringify(reducedTodo));
     setTodos(reducedTodo);
   };
+
 
   const handleComplete = (index) => {
     let now = new Date();

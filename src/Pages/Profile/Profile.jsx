@@ -6,15 +6,15 @@ const Profile = () => {
   const [profileImage, setProfileImage] = useState(null);
   const [isEditMode, setIsEditMode] = useState(false);
   const [formData, setFormData] = useState({
-    name: "John",
-    surname: "Doe",
-    mobile: "+1234567890",
-    github: "https://github.com/johndoe",
-    linkedin: "https://www.linkedin.com/in/johndoe",
-    email: "john.doe@example.com",
+    name: "Harshal",
+    surname: "Chavan",
+    mobile: "+919860397831",
+    github: "https://github.com/hc017",
+    linkedin: "https://www.linkedin.com/in/harshal-chavan",
+    email: "hc170@gmail.com.com",
     profession: "Software Engineer",
-    country: "United States",
-    state: "California",
+    country: "India",
+    state: "Maharashtra",
   });
 
   const handleImageChange = (e) => {

@@ -18,6 +18,12 @@ const Sidebar = () => {
     setCollapsed(!collapsed);
   };
 
+  function redirectTohome() {
+    // Replace the URL with the desired destination
+    window.location.href = "/" ;
+}
+
+
   
 
   return (
@@ -59,15 +65,12 @@ const Sidebar = () => {
             <FaPeopleGroup className="SB_icons" />
             Team Buddies
           </Link>
-          <a className="a">
+          <a href="https://meet.google.com/nuc-ipmi-qgb" className="a">
             {" "}
             <SiGooglemeet className="SB_icons" />
             Meetings
           </a>
-          <a className="a">
-            <IoChatboxEllipsesOutline className="SB_icons" />
-            Chat
-          </a>
+
         </div>
         <div className="Sbar_line"></div>
         <div className="SB_team">
@@ -97,7 +100,7 @@ const Sidebar = () => {
           PROJECT SETTING
         </a>
         <Link >
-        <button id="logout" >
+        <button onClick={redirectTohome} id="logout" >
           Logout
           </button>
         </Link>
