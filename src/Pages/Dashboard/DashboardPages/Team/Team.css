@@ -16,6 +16,14 @@
   width: 90%;
 
 }
+.displaytext{
+  width: 100%;
+  padding-left: 35%;
+}
+.project_no{
+  width: 40%;
+  height: 70%;
+}
 .Tcards-container{
   width: 100%;
   display: flex;

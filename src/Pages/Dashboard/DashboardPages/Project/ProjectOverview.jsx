@@ -21,40 +21,45 @@ const ProjectOverview = () => {
     hour12: true,
   });
 
+  const [email, setUserEmail] = useState("");
   const [userName, setUserName] = useState("");
   const [projects, setProjects] = useState([]);
-
   useEffect(() => {
-    
-    // Fetch user's name
-    const token = localStorage.getItem("token");
-    axios
-      .get("http://localhost:5000/api/users/getuser", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((response) => {
-        setUserName(response.data.user.fullName);
-      })
-      .catch((error) => {
-        console.error("Error fetching user details:", error);
-      });
+    const fetchUserProjects = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const userEmail = localStorage.getItem("userEmail");
 
-    // Fetch projects created by the user
-    axios
-      .get("http://localhost:5000/api/users/userprojects", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((response) => {
+        if (!token || !userEmail) {
+          console.error("Token or userEmail not found in localStorage");
+          return;
+        }
+
+        // Store user's email in state
+        setUserEmail(userEmail);
+
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+
+        // Send a POST request to fetch user's projects
+        const response = await axios.post(
+          "http://localhost:5000/api/users/userprojects",
+          { userEmail }, // Send user's email in the request body
+          config
+        );
         setProjects(response.data.projects);
-      })
-      .catch((error) => {
-        console.error("Error fetching user's projects:", error);
-      });
+      } catch (error) {
+        console.error("Error fetching user projects:", error);
+      }
+    };
+
+    fetchUserProjects();
   }, []);
+  
+  
 
   const handleProjectSelect = (event) => {
     const selectedProjectId = event.target.value;

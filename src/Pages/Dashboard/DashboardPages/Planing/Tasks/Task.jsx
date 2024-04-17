@@ -6,6 +6,7 @@ import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { BsCheckLg } from "react-icons/bs";
 import Timeline from '../TimeLine/Timeline'
 import { useNavigation } from "react-router-dom";
+import axios from "axios";
 
 const Task = () => {
   const [isCompleteScreen, setIsCompleteScreen] = useState(false);
@@ -19,6 +20,46 @@ const Task = () => {
   const [completedTodos, setCompletedTodos] = useState([]);
   const [currentEdit, setCurrentEdit] = useState("");
   const [currentEditedItem, setCurrentEditedItem] = useState("");
+  const [selectedProjectId, setSelectedProjectId] = useState("");
+  const [projects, setProjects] = useState([]);
+  const [email, setUserEmail] = useState("");
+
+  
+  useEffect(() => {
+    const fetchUserProjects = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const userEmail = localStorage.getItem("userEmail");
+
+        if (!token || !userEmail) {
+          console.error("Token or userEmail not found in localStorage");
+          return;
+        }
+
+        // Store user's email in state
+        setUserEmail(userEmail);
+
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+
+        // Send a POST request to fetch user's projects
+        const response = await axios.post(
+          "http://localhost:5000/api/users/userprojects",
+          { userEmail }, // Send user's email in the request body
+          config
+        );
+        setProjects(response.data.projects);
+      } catch (error) {
+        console.error("Error fetching user projects:", error);
+      }
+    };
+
+    fetchUserProjects();
+  }, []);
+
 
 
 
@@ -123,11 +164,26 @@ const Task = () => {
     return ["John Doe", "Jane Smith", "Alice Johnson", "Bob Brown"];
   };
 
+  const handleProjectChange = (event) => {
+    setSelectedProjectId(event.target.value);
+  };
+
   return (
     <div className="Task_Component">
       <Sidebar />
       <div className="Side_Side">
         <div className="App">
+        <div className="sort-dropdown">
+          <label htmlFor="project">Select Project:</label>
+          <select id="sort" onChange={handleProjectChange}>
+            <option value="">Select a project</option>
+            {projects.map((project) => (
+              <option key={project._id} value={project._id}>
+                {project.projectName}
+              </option>
+            ))}
+          </select>
+        </div>
           <h1>Task Manager</h1>
 
           <div className="todo-wrapper">

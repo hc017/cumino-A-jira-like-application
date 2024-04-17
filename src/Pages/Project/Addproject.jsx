@@ -15,27 +15,29 @@ const Addproject = () => {
   const navigate = useNavigate();
   const [teamMemories, setTeamMemories] = useState([]);
   const [error, setError] = useState(""); // Define error state
-
   const handleAddTeamMember = () => {
     if (newTeamMember !== "") {
-      const newTeamMembers = [];
       const size = parseInt(teamSize);
-      for (let i = 0; i < size; i++) {
-        const newMember = `${newTeamMember} ${i + 1}`;
-        newTeamMembers.push(newMember);
-
-        // Optionally, add the new team member to teamMemories array
-        setTeamMemories([...teamMemories, newMember]);
+      
+      // Check if the new team member is already added
+      if (!teamMembers.includes(newTeamMember)) {
+        // Add only if the maximum team size is not reached
+        if (teamMembers.length < size) {
+          // Add the new team member
+          setTeamMembers([...teamMembers, newTeamMember]);
+        } else {
+          alert("Maximum team size reached");
+        }
+      } else {
+        alert("Team member already added");
       }
-
-      // Add the new team members to teamMembers array
-      setTeamMembers([...teamMembers, ...newTeamMembers]);
-
+  
       // Clear the input field for new team members
       setNewTeamMember("");
     }
   };
-
+  
+  
   const handleSubmitProject = async (e) => {
     e.preventDefault();
     try {

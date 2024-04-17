@@ -8,27 +8,43 @@ import axios from "axios";
 
 const ViewProject = () => {
   const [projects, setProjects] = useState([]);
+  const [email, setUserEmail] = useState("");
 
 
   useEffect(() => {
-    
-    // Fetch user's projects
-    const token = localStorage.getItem("token");
-   // Fetch projects created by the user
-    axios
-      .get("http://localhost:5000/api/users/userprojects", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((response) => {
-        setProjects(response.data.projects);
-      })
-      .catch((error) => {
-        console.error("Error fetching user's projects:", error);
-      });
-  }, []);
+    const fetchUserProjects = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const userEmail = localStorage.getItem("userEmail");
 
+        if (!token || !userEmail) {
+          console.error("Token or userEmail not found in localStorage");
+          return;
+        }
+
+        // Store user's email in state
+        setUserEmail(userEmail);
+
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+
+        // Send a POST request to fetch user's projects
+        const response = await axios.post(
+          "http://localhost:5000/api/users/userprojects",
+          { userEmail }, // Send user's email in the request body
+          config
+        );
+        setProjects(response.data.projects);
+      } catch (error) {
+        console.error("Error fetching user projects:", error);
+      }
+    };
+
+    fetchUserProjects();
+  }, []);
   const currentDate = new Date();
   const day = currentDate.toLocaleDateString(undefined, { weekday: "long" });
   const date = currentDate.toLocaleDateString(undefined, {
