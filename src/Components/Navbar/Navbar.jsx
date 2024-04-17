@@ -43,13 +43,6 @@ function Navbar() {
     setClicked(!clicked);
   };
 
-  const CurrentUser = {
-    result: {
-      email: "hc@mail.com",
-      joinedOn: "2222-07-15T09:57:23.489Z",
-    },
-  };
-
   return (
     <nav className="NavbarItems">
       <h1 className="navbar-logo">
@@ -73,26 +66,7 @@ function Navbar() {
             </li>
           );
         })}
-        {CurrentUser ? (
-          <>
-            <div className="chanel_logo_app">
-              <p className="fsChar_logo_app">
-                {CurrentUser?.result.name ? (
-                  <>{CurrentUser?.result.name.charAt(0).toUpperCase()}</>
-                ) : (
-                  <>{CurrentUser?.result.email.charAt(0).toUpperCase()}</>
-                )}
-              </p>
-            </div>
-          </>
-        ) : (
-          <>
-            <p className="auth_btn">
-              <BiUserCircle size={22} />
-              <b>Sign In</b>
-            </p>
-          </>
-        )}
+      
       </ul>
     </nav>
   );

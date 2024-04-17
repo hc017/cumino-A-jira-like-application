@@ -5,8 +5,15 @@ import "./TeamPlayerCard.css";
 import { SiGooglemeet } from "react-icons/si";
 import { IoChatboxEllipses } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
 
 const TeamPlayerCard = ({ name }) => {
+  const navigate = useNavigate();
+
+  const handleViewTasks = () => {
+    navigate('/task'); // Replace '/nextpage' with the path of your next page
+  };
+
   return (
     <div class="parent">
       <div class="card">
@@ -27,7 +34,7 @@ const TeamPlayerCard = ({ name }) => {
             </button>
           </div>
           <div class="view-more">
-            <button class="view-more-button">View Tasks</button>
+            <button onClick={handleViewTasks} class="view-more-button">View Tasks</button>
             <svg
               class="svg"
               xmlns="http://www.w3.org/2000/svg"

@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 
+// const backendUrl = process.env.ENVIRONMENT === "dev" ? "http://localhost:5000" : "https://eco-eats-website-back-end.vercel.app";
+
 const SignIn = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -40,9 +42,6 @@ const SignIn = () => {
     }
   };
   
-  
-  
-
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
@@ -91,7 +90,7 @@ const SignIn = () => {
             <div class="new-form-content">
               <div class="new-login-form">
                 <div class="new-title">Login</div>
-                <form action="#" onSubmit={handleLogin}>
+                <form>
                   <div class="new-input-boxes">
                     <div class="new-input-box">
                       <i class="fas fa-envelope"></i>
@@ -117,14 +116,14 @@ const SignIn = () => {
                       <a href="#">Forgot password?</a>
                     </div>
                     <div className="new-GGlogo">
-                      <Link onClick={handleLogin} className="new-LGlogo">
+                      <Link  className="new-LGlogo">
                         <FcGoogle className="new-Glogo" />
                       </Link>
                       <Link className="new-LGlogo">
                         <FaGithub className="new-Glogo" />
                       </Link>
                     </div>
-                    <Link  class="new-button new-input-box">
+                    <Link onClick={handleLogin}  class="new-button new-input-box">
                       <input type="submit" value="Submit" />
                     </Link>
                     <div class="new-text sign-up-text">

@@ -20,6 +20,8 @@ const AfterSignUpForm = () => {
   const [github, setGithub] = useState("");
   const [mobile, setMobile] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
+  
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 

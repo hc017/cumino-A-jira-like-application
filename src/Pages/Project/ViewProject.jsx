@@ -67,7 +67,7 @@ const ViewProject = () => {
               {day}, {date}
             </h3>
             <h1 className="PO_tilteH1">
-              Good {time.includes("AM") ? "Morning" : "Evening"}, HC
+              Good {time.includes("AM") ? "Morning" : "Evening"}
             </h1>
             <div className="PO_featureComp">
               <Link to="/viewproject" className=" PO_butn">

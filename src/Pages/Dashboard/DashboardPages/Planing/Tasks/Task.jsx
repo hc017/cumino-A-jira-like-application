@@ -23,6 +23,8 @@ const Task = () => {
   const [selectedProjectId, setSelectedProjectId] = useState("");
   const [projects, setProjects] = useState([]);
   const [email, setUserEmail] = useState("");
+  const [teamMembers, setTeamMembers] = useState([]);
+  const [teammates, setTeammates] = useState([]);
 
   
   useEffect(() => {
@@ -214,7 +216,30 @@ const Task = () => {
 
   const handleProjectChange = (event) => {
     setSelectedProjectId(event.target.value);
+    setTODOAssign("");
   };
+
+  useEffect(() => {
+    if (selectedProjectId) {
+      const token = localStorage.getItem("token");
+      axios
+        .get(`http://localhost:5000/api/users/projects/${selectedProjectId}/teammates`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          setTeamMembers(response.data.teamMembers);
+        })
+        .catch((error) => {
+          console.error("Error fetching teammates:", error);
+        });
+    } else {
+      // Reset teamMembers when no project is selected
+      setTeamMembers([]);
+    }
+  }, [selectedProjectId]);
+  
 
   return (
     <div className="Task_Component">
@@ -264,11 +289,11 @@ const Task = () => {
                     placeholder="Task is Assign to??"
                     required
                   >
-                    <option value="">Select Assignee</option>
-                    {getAssigneeOptions().map((assignee, index) => (
-                      <option key={index} value={assignee}>
-                        {assignee}
-                      </option>
+                     <option value="">Select Assignee</option>
+              {teamMembers.map((member, index) => (
+                <option key={index} value={member}>
+                  {member}
+                </option>
                     ))}
                   </select>
                 </div>
