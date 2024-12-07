@@ -25,41 +25,41 @@ const AfterSignUpForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const token = localStorage.getItem("token");
-      const userEmail = localStorage.getItem("userEmail");
+    // try {
+    //   const token = localStorage.getItem("token");
+    //   const userEmail = localStorage.getItem("userEmail");
 
-      if (!token || !userEmail) {
-        console.error("Token or userEmail not found in localStorage");
-        return;
-      }
+    //   if (!token || !userEmail) {
+    //     console.error("Token or userEmail not found in localStorage");
+    //     return;
+    //   }
 
-      const config = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
+    //   const config = {
+    //     headers: {
+    //       Authorization: `Bearer ${token}`,
+    //     },
+    //   };
 
-      const formData = {
-        fullName,
-        college,
-        designation,
-        github,
-        mobile,
-        whatsapp,
-        email: userEmail, // Pass the userEmail to the backend
-      };
+    //   const formData = {
+    //     fullName,
+    //     college,
+    //     designation,
+    //     github,
+    //     mobile,
+    //     whatsapp,
+    //     email: userEmail, // Pass the userEmail to the backend
+    //   };
 
-      const response = await axios.post("http://localhost:5000/api/users/addi", formData, config);
+    //   const response = await axios.post("http://localhost:5000/api/users/addi", formData, config);
 
-      console.log(response.data);
+    //   console.log(response.data);
       window.alert("Data added");
       navigate("/projectoverview")
       // Optionally, you can navigate to another page upon successful submission
-    } catch (error) {
-      console.error("Error storing additional details:", error);
-      setError("Internal server error");
-    }
+    // } catch (error) {
+    //   console.error("Error storing additional details:", error);
+    //   setError("Internal server error");
+    // }
   };
 
 
