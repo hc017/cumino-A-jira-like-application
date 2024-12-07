@@ -23,23 +23,23 @@ const SignIn = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      const url = "http://localhost:5000/api/users/login";
-      const response = await axios.post(url, { email, password });
+    
+      // const url = "http://localhost:5000/api/users/login";
+      // const response = await axios.post(url, { email, password });
   
-      if (response.status === 200) {
-        const { token, userEmail } = response.data;
-        localStorage.setItem("token", token);
-        localStorage.setItem("userEmail", userEmail); // Store userEmail in localStorage
-        window.alert("Login Successfully!!!");
+      // if (response.status === 200) {
+      //   const { token, userEmail } = response.data;
+      //   localStorage.setItem("token", token);
+      //   localStorage.setItem("userEmail", userEmail); // Store userEmail in localStorage
+      //   window.alert("Login Successfully!!!");
         navigate("/siginupform");
-      } else {
-        setError("Incorrect email or password");
-      }
-    } catch (error) {
-      console.error("Error logging in:", error);
-      setError("Internal server error");
-    }
+    //   } else {
+    //     setError("Incorrect email or password");
+    //   }
+    // } catch (error) {
+    //   console.error("Error logging in:", error);
+    //   setError("Internal server error");
+    // }
   };
   
   const handleSignup = async (e) => {
@@ -116,12 +116,7 @@ const SignIn = () => {
                       <a href="#">Forgot password?</a>
                     </div>
                     <div className="new-GGlogo">
-                      <Link  className="new-LGlogo">
-                        <FcGoogle className="new-Glogo" />
-                      </Link>
-                      <Link className="new-LGlogo">
-                        <FaGithub className="new-Glogo" />
-                      </Link>
+                    
                     </div>
                     <Link onClick={handleLogin}  class="new-button new-input-box">
                       <input type="submit" value="Submit" />
@@ -176,12 +171,7 @@ const SignIn = () => {
                       />
                     </div>
                     <div className="new-GGlogo">
-                      <Link className="new-LGlogo">
-                        <FcGoogle className="new-Glogo" />
-                      </Link>
-                      <Link className="new-LGlogo">
-                        <FaGithub className="new-Glogo" />
-                      </Link>
+                     
                     </div>
                     <div class="new-button new-input-box">
                       <input type="submit" value="Submit" />
